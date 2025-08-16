@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: rgb(218, 232, 241);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      nav {
+        box-shadow: 0 10px 40px rgb(99, 99, 102);
+        background-color: rgb(187, 207, 235);
+      }
+      h1 {
+        text-shadow: 0 12px 14px black;
+      }
+      li,
+      h1 {
+        display: inline-block;
+        color: white;
+      }
+      .time {
+        border: solid 2px whitesmoke;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding: 0;
+        height: 34px;
+        margin: auto 0;
+        background-color: rgb(218, 232, 241);
+      }
+      a {
+        text-decoration: none;
+        padding: 5px 10px;
+        font-size: larger;
+        margin: 0;
+      }
+      .active {
+        border-right: solid 2px whitesmoke;
+        box-shadow: rgb(153, 159, 163) 3px 3px 6px 0px inset,
+          rgba(192, 179, 179, 0.5) -3px -3px 6px 1px inset;
+        border-radius: 20px;
+      }
+      .active2 {
+        border-left: solid 2px whitesmoke;
+        box-shadow: rgb(153, 159, 163) 3px 3px 6px 0px inset,
+          rgba(192, 179, 179, 0.5) -3px -3px 6px 1px inset;
+        border-radius: 20px;
+      }
+      ul {
+        display: flex;
+        justify-content: space-around;
+      }
+      img {
+        border-radius: 20%;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      .artical {
+        display: flex;
+        gap: 50px;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 50px;
+      }
+      .fade {
+        position: relative;
+      }
+      .fade button {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: larger;
+        text-decoration: none;
+        background: none;
+        border: none;
+        color: whitesmoke;
+        font-size: xxx-large;
+      }
+      .fadi {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(128, 140, 156);
+      }
+      .fadi button {
+        position: relative;
+        text-decoration: none;
+        font-size: xx-large;
+        background-color: rgb(187, 207, 235);
+        border: solid whitesmoke;
+        color: whitesmoke;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding: 5px 20px;
+      }
+
+      .benefits {
+        color: ;
+        position: absolute;
+        display: none;
+        top: 60%;
+        left: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><h1>Cat as a Pet</h1></li>
+          <li class="time">
+            <a
+              href="javascript:void(0)"
+              class="a active"
+              onclick="document.querySelector('.b').style.cssText='border-left: none; box-shadow: none; border-radius: none'; 
+              document.querySelector('.a').style.cssText='border-right: solid 2px whitesmoke; box-shadow: rgb(153, 159, 163) 3px 3px 6px 0px inset, rgba(192, 179, 179, 0.5) -3px -3px 6px 1px inset ; border-radius: 20px ' 
+              document.querySelector('body').style.background='rgb(218, 232, 241)'"
+              >🌞</a
+            >
+
+            <a
+              href="javascript:void(0)"
+              class="b"
+              onclick="document.querySelector('.a').style.cssText='border-right: none; box-shadow: none; border-radius: none '
+              ;document.querySelector('.b').style.cssText='border-left: solid 2px whitesmoke; box-shadow: rgb(153, 159, 163) 3px 3px 6px 0px inset, rgba(192, 179, 179, 0.5) -3px -3px 6px 1px inset ; border-radius: 20px';
+              document.querySelector('body').style.background=' rgb(69, 82, 90)'"
+              >🌘
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="artical">
+        <div class="fade">
+          <img
+            src="abc.webp"
+            class="images"
+            alt="cat imag"
+            width="400"
+            height="400"
+          />
+          <button onclick="document.querySelector('.images').src = 'def.jpg'">
+            ◀
+          </button>
+        </div>
+
+        <div class="fadi">
+          <button
+            onclick="document.querySelector('.benefits').style.display='inline-block'"
+          >
+            Benefits of Having a Cat
+          </button>
+          <p class="benefits">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+            excepturi rem eos expedita, adipisci hic aut? Hic cum ipsum sequi
+            <br />
+            numquam quo laboriosam inventore qui nisi perspiciatis, soluta et
+            quibusdam. Recusandae voluptatem ipsum cum minima suscipit dicta
+            <br />
+            ducimus, provident dolor laborum aspernatur facere tempore,
+            perspiciatis, animi distinctio eos mollitia autem? Beatae labore
+            <br />
+            tempore, architecto cum soluta rem quod officia facere?
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
