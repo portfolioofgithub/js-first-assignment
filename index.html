@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      button {
+        cursor: pointer;
+      }
       body {
         background-color: rgb(218, 232, 241);
       }
@@ -12,6 +15,7 @@
         box-sizing: border-box;
       }
       nav {
+        border-radius: 20px;
         box-shadow: 0 10px 40px rgb(99, 99, 102);
         background-color: rgb(187, 207, 235);
       }
@@ -28,12 +32,13 @@
         border-radius: 20px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         padding: 0;
-        height: 34px;
         margin: auto 0;
         background-color: rgb(218, 232, 241);
       }
-      a {
-        text-decoration: none;
+      .a,
+      .b {
+        border: none;
+        background: none;
         padding: 5px 10px;
         font-size: larger;
         margin: 0;
@@ -60,6 +65,7 @@
       }
       .artical {
         display: flex;
+        flex-wrap: wrap;
         gap: 50px;
         justify-content: space-around;
         align-items: center;
@@ -99,11 +105,23 @@
       }
 
       .benefits {
-        color: ;
         position: absolute;
         display: none;
         top: 60%;
         left: 50%;
+      }
+      .fadi button:active {
+        box-shadow: none;
+        transform: translateY(5%);
+      }
+      @media (max-width: 900px) {
+        .benefits {
+          position: relative;
+          margin: auto;
+          top: 1.2rem;
+          left: 0;
+          margin-bottom: 50px;
+        }
       }
     </style>
   </head>
@@ -113,23 +131,23 @@
         <ul>
           <li><h1>Cat as a Pet</h1></li>
           <li class="time">
-            <a
-              href="javascript:void(0)"
+            <button
               class="a active"
               onclick="document.querySelector('.b').style.cssText='border-left: none; box-shadow: none; border-radius: none'; 
               document.querySelector('.a').style.cssText='border-right: solid 2px whitesmoke; box-shadow: rgb(153, 159, 163) 3px 3px 6px 0px inset, rgba(192, 179, 179, 0.5) -3px -3px 6px 1px inset ; border-radius: 20px ' 
               document.querySelector('body').style.background='rgb(218, 232, 241)'"
-              >🌞</a
             >
+              🌞
+            </button>
 
-            <a
-              href="javascript:void(0)"
+            <button
               class="b"
               onclick="document.querySelector('.a').style.cssText='border-right: none; box-shadow: none; border-radius: none '
               ;document.querySelector('.b').style.cssText='border-left: solid 2px whitesmoke; box-shadow: rgb(153, 159, 163) 3px 3px 6px 0px inset, rgba(192, 179, 179, 0.5) -3px -3px 6px 1px inset ; border-radius: 20px';
               document.querySelector('body').style.background=' rgb(69, 82, 90)'"
-              >🌘
-            </a>
+            >
+              🌘
+            </button>
           </li>
         </ul>
       </nav>
@@ -144,17 +162,11 @@
             width="400"
             height="400"
           />
-          <button onclick="document.querySelector('.images').src = 'def.jpg'">
-            ◀
-          </button>
+          <button onclick="foto()">◀</button>
         </div>
 
         <div class="fadi">
-          <button
-            onclick="document.querySelector('.benefits').style.display='inline-block'"
-          >
-            Benefits of Having a Cat
-          </button>
+          <button onclick="chan()">Benefits of Having a Cat</button>
           <p class="benefits">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
             excepturi rem eos expedita, adipisci hic aut? Hic cum ipsum sequi
@@ -170,5 +182,20 @@
         </div>
       </div>
     </main>
+    <script>
+      function foto() {
+        let p = document.querySelector(".images");
+        if (p.src.includes("abc.webp")) {
+          p.src = "def.avif";
+        } else {
+          p.src = "abc.webp";
+        }
+      }
+      function chan() {
+        let tx = document.querySelector(".benefits");
+        tx.style.display =
+          tx.style.display === "none" ? "inline-block" : "none";
+      }
+    </script>
   </body>
 </html>
